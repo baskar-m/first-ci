@@ -1,0 +1,13 @@
+name: test shell commands
+on: [push, pull_request]
+jobs:
+  shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print string
+        run: echo "Hello, World!"
+      - name: Run shell commands
+        run: |
+          node -v
+          npm -v
+          echo "All command is executed successfully!"
