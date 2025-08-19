@@ -1,13 +1,33 @@
-name: js workflow
-on: [push, pull_request]
-jobs:
-  run-github-actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: simple javascript
-        id: Hello
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: 'World'
-      - name: output time
-        run: echo "Current time is ${{ steps.Hello.outputs.time }}"
+name : Action Workflow
+
+on : [push]
+
+jobs :
+  run-github-actions :
+    runs-on : ubuntu-latest
+    steps :
+      - name : List Files 
+        run : |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"
+
+      - name : Checkout
+        uses : actions/checkout@v1
+
+      - name : List files After Checkout
+        run : |
+          pwd
+          ls -a
+
+      - name : Simple Javascript Action
+        id : hello
+        uses : actions/hello-world-javascript-action@v1
+        with :
+          who-to-greet : 'Tavant Bangalore India'
+
+      - name : Get the output time 
+        run : echo "The time is ${{ steps.hello.outputs.time }}"
