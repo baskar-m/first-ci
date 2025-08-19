@@ -3,8 +3,6 @@ name : Action Workflow
 on :
   schedule :
     - cron : '*/1 0 * * *'
-  pull_request :
-    types : [closed, assign, opened, synchronize, reopened]
 
 jobs :
   run-github-actions :
