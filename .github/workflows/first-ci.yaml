@@ -9,6 +9,7 @@ jobs:
       - name: Run shell commands
         run: |
           node -v
+<<<<<<< HEAD
           npm -v
           echo "All command is executed successfully!"
   windows-commands:
@@ -25,3 +26,7 @@ jobs:
           node -v
           npm -v
           echo "All command is executed successfully!"
+=======
+          npsdfm -v
+          echo "All command is executed successfully!"
+>>>>>>> ede1d7876ac869a3f122147ee031c22afe2279bd
