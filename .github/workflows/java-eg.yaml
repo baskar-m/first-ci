@@ -1,0 +1,13 @@
+name: js workflow
+on: [push, pull_request]
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: simple javascript
+        id: Hello
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: 'World'
+      - name: output time
+        run: echo "Current time is ${{ steps.Hello.outputs.time }}"
